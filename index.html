@@ -16,8 +16,14 @@
     <div id="root"></div>
 
     <!-- React & ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
 
     <!-- Babel to compile JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -31,6 +37,26 @@
         "One more chance, pookie?",
         "Don't break my heart :(",
         "What about a maybe?",
+        "No? Is this the villain origin story? 🦹‍♂️",
+        "I already told my mom about us 😳",
+        "This is worse than getting ghosted on WhatsApp 💀",
+        "My teddy bear is crying 🧸💧",
+        "I'll just go cry in the corner now 😢",
+        "Even my dog thinks we’re meant to be 🐶❤️",
+        "You’ll regret this in the Netflix documentary 😔",
+        "Okay but I already made a playlist called 'Us' 🎶",
+        "Wow, even my pizza doesn’t reject me 🍕",
+        "Fine, I’ll tell Cupid you’re off the list 🏹",
+        "You just broke 7 of my 3 hearts 💔💔💔",
+        "I thought we had something! Like…a vibe 😭",
+        "Just say 'yes' before I write a sad poem 📝",
+        "This was not in my tarot reading 🔮",
+        "My therapist will hear about this 😩",
+        "I skipped lunch for this 💀",
+        "I changed my ringtone to your name 🫠",
+        "Plot twist: you actually like me 🫢",
+        "I'm too cute to be rejected 😎",
+        "Fine, I’ll go eat worms 🪱😒",
         "Please don't do this to me, I'm fragile",
       ];
 
@@ -39,28 +65,33 @@
         const [isValentine, setIsValentine] = React.useState(false);
         const yesButtonSize = noClicks * 20 + 16;
 
-        const firstImg = "https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif";
-        const secondImg = "https://media.tenor.com/f1xnRxTRxLAAAAAj/bears-with-kisses-bg.gif";
+        const firstImg =
+          "https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif";
+        const secondImg =
+          "https://media.tenor.com/f1xnRxTRxLAAAAAj/bears-with-kisses-bg.gif";
 
         const handleNo = () => setNoClicks((prev) => prev + 1);
         const handleYes = () => setIsValentine(true);
 
         return (
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100vh",
-            fontFamily: "Arial, sans-serif",
-            textAlign: "center",
-          }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              fontFamily: "Arial, sans-serif",
+              textAlign: "center",
+            }}
+          >
             {!isValentine ? (
               <>
                 <img src={firstImg} />
-                <h1>Drishti, Will you be my Valentine? 💘</h1>
+                <h1>Drishti Jii, Will you be my Valentine? 💘</h1>
                 <div>
-                  <button onClick={handleYes}
+                  <button
+                    onClick={handleYes}
                     style={{
                       fontSize: `${yesButtonSize}px`,
                       margin: "10px",
@@ -70,10 +101,12 @@
                       border: "none",
                       borderRadius: "5px",
                       cursor: "pointer",
-                    }}>
+                    }}
+                  >
                     Yes
                   </button>
-                  <button onClick={handleNo}
+                  <button
+                    onClick={handleNo}
                     style={{
                       fontSize: "16px",
                       margin: "10px",
@@ -83,23 +116,30 @@
                       border: "none",
                       borderRadius: "5px",
                       cursor: "pointer",
-                    }}>
+                    }}
+                  >
                     {noClicks === 0
                       ? "No"
-                      : NO_PHRASES[Math.min(noClicks - 1, NO_PHRASES.length - 1)]}
+                      : NO_PHRASES[
+                          Math.min(noClicks - 1, NO_PHRASES.length - 1)
+                        ]}
                   </button>
                 </div>
               </>
             ) : (
               <>
                 <img src={secondImg} />
-                <div style={{
-                  fontSize: "48px",
-                  color: "pink",
-                  fontWeight: "bold",
-                }}>
+                <div
+                  style={{
+                    fontSize: "48px",
+                    color: "pink",
+                    fontWeight: "bold",
+                  }}
+                >
                   Yay!!! 💖🎉 I love you too baby
-                    <span role="img" aria-label="heart">❤️</span>
+                  <span role="img" aria-label="heart">
+                    ❤️
+                  </span>
                 </div>
               </>
             )}
